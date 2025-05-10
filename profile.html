@@ -31,7 +31,7 @@ awesome/4.6.3/css/font-awesome.min.css">
     }
 
    /*the 2 box thingy*/
-    .container {
+.container {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -41,7 +41,7 @@ awesome/4.6.3/css/font-awesome.min.css">
 }
 
 .box {
-  background-color: rgba(255, 255, 255, 0.75); /* fixed invalid rgba */
+  background-color: rgba(255, 255, 255, 0.75);
   border: 2px solid brown;
   padding: 30px;
   margin: 10px;
@@ -177,8 +177,19 @@ nav.w3-bar {
   z-index: 1000;
 }
 
+/* Media query to adjust layout for smaller screens */
 @media screen and (max-width: 600px) {
-  nav.w3-bar {
+  .container {
+    flex-direction: column; /* Stack the boxes vertically on small screens */
+    gap: 10px; /* Reduce gap between boxes for mobile */
+  }
+
+  .box {
+    max-width: 100%; /* Ensure boxes take full width on mobile */
+    margin: 0 auto; /* Center the boxes horizontally */
+  }
+
+  .nav-bar {
     padding: 0 10px;
   }
 
@@ -186,9 +197,17 @@ nav.w3-bar {
     font-size: 14px !important;
     padding: 6px 8px !important;
   }
+}
 
+/* For larger screens (PC), boxes will stay side by side */
+@media screen and (min-width: 601px) {
   .container {
-    margin-top: 40px; /* smaller top margin for login box */
+    flex-direction: row; /* Boxes side by side on larger screens */
+    gap: 20px; /* Space between boxes */
+  }
+
+  .box {
+    width: auto; /* Allow boxes to scale naturally */
   }
 }
 

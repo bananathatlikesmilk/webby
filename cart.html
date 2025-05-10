@@ -21,24 +21,41 @@
     }
 
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background-color: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-    }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0 10px;
+  }
 
-    .nav-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
+  .w3-bar-item {
+    font-size: 14px;
+    padding: 6px 10px;
+    color: white;
+  }
 
-    .nav-left, .nav-right {
-      display: flex;
+  .nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-left, .nav-right {
+    display: flex;
+  }
+
+  .nav-spacer {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 600px) {
+    .w3-bar-item {
+      font-size: 13px !important;
+      padding: 4px 6px !important;
     }
+  }
 
  /* nav .w3-button { font-size: 14px; // Adjusted size for navigation buttons //
   padding: 8px 16px; // Adjust padding for a more compact look // 
@@ -49,9 +66,7 @@ nav .w3-bar-item {
 }*/
 
 
-    .nav-spacer {
-      flex: 1;
-    }
+   
 
     h2, h5, p {
       margin: 20px 0;
@@ -82,16 +97,7 @@ nav .w3-bar-item {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
 
-    @media screen and (max-width: 600px) {
-  nav.w3-bar {
-    padding: 0 10px;
-  }
-
-  .w3-bar-item {
-    font-size: 14px !important;
-    padding: 6px 8px !important;
-  }
-
+  
   .container {
     margin-top: 40px; /* smaller top margin for login box */
   }

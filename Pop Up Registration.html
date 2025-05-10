@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+        href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <title>Pop up registration</title>
+
+	<style> 
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+}
+
+.nav-spacer {
+  flex: 1;
+}
+	</style>
+    <script>
+        function disp() {
+            var name = prompt("Enter your Name");
+            var age = prompt("Enter your Age");
+            var address = prompt("Enter your Address");
+            var birthday = prompt("Enter your Birthday");
+            var gender = prompt("Enter your Gender");
+            var contactno = prompt("Enter your Contact No.");
+
+            // Fill in the display container instead of overwriting the entire document
+            var output = `
+                <h1>Activity 3</h1>
+                <h2>Your Name is:</h2> <i>${name.toUpperCase()}</i>
+                <h2>Your Age is:</h2> <b>${age.toUpperCase()}</b>
+                <h2>Your Address is:</h2> <u>${address.toUpperCase()}</u>
+                <h2>Your Birthday is:</h2> <marquee>${birthday.toUpperCase()}</marquee>
+                <h2>Your Gender is:</h2> <strike>${gender.toUpperCase()}</strike>
+                <h2>Your Contact No. is:</h2> ${contactno.toUpperCase()}
+            `;
+
+            document.getElementById("displayData").innerHTML = output;
+        }
+    </script>
+</head>
+
+<body onload="disp()" style="margin:0">
+
+    <!-- Navigation stays at the top -->
+    <nav class="w3-bar w3-black nav-flex">
+  <div class="nav-left">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <div class="nav-right">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+  </div>
+</nav>
+
+    <!-- Container for dynamic display -->
+    <div id="displayData" class="w3-container w3-padding"></div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://miro.medium.com/v2/resize:fit:7172/1*mWHwLyyEYnFoBnwF0stgTA.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    .submit {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .submit {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Log In</h1>
+    <form name="login" onsubmit="return validateForm();" method="post">
+      <input class="username" type="text" name="username" placeholder="Username">
+      <input class="password" type="password" name="password" placeholder="Password">
+      <input type="button" class="submit" value="Login" name="submit" onclick="validate()">
+    </form>
+  </div>
+
+  <script>
+    var count = 2;
+
+    function validate() {
+      var user = document.login.username.value;
+      var password = document.login.password.value;
+      var valid = false;
+
+      var usernameArray = ["I am Steve"];
+      var passwordArray = ["lava chicken"];
+
+      for (var i = 0; i < usernameArray.length; i++) {
+        if (user === usernameArray[i] && password === passwordArray[i]) {
+          valid = true;
+          break;
+        }
+      }
+
+      if (valid) {
+        alert("Steve logged in");
+        window.location.href = "file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html";
+        return;
+      }
+
+      var again = (count === 1) ? "try" : "you died";
+      if (count >= 1) {
+        alert("Wrong on both, pabo! (" + again + ")");
+        count--;
+      }
+    }
+  </script>
+</body>
+</html>

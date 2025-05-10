@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+}
+
+.nav-spacer {
+  flex: 1;
+}
+
+    .product-section {
+      padding: 16px;
+    }
+
+    .product-card {
+      margin-bottom: 16px;
+      padding: 16px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .product-description {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .cart-section {
+      padding: 16px;
+      background-color: #eee;
+    }
+
+    .cart-item {
+      margin-bottom: 8px;
+    }
+
+    .cart-total {
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .cart-button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+<nav class="w3-bar w3-black nav-flex">
+  <div class="nav-left">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <div class="nav-right">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+  </div>
+</nav>
+  <!-- Product Grid -->
+  <!-- Product Grid -->
+<div class="product-section w3-row-padding" id="products">
+
+  <!-- Product 1 -->
+  <div class="w3-col l4 m6 s12">
+    <div class="product-card">
+      <img src="https://i.imgur.com/LZOZYAy.jpeg" class="product-image" alt="CHARLIE ALBUM">
+      <div class="product-description">
+        <strong>CHARLIE ALBUM</strong><br>
+        Artist: Charlie<br>
+        Genre: Pop<br>
+        Price: 1500 PHP<br>
+        <button onclick="addToCart('CHARLIE ALBUM', 1500)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="w3-col l4 m6 s12">
+    <div class="product-card">
+      <img src="https://i.imgur.com/iREqiyi.jpeg" class="product-image" alt="IM NAYEON">
+      <div class="product-description">
+        <strong>IM NAYEON</strong><br>
+        Artist: Nayeon<br>
+        Genre: K-pop<br>
+        Price: 2300 PHP<br>
+        <button onclick="addToCart('IM NAYEON', 2300)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="w3-col l4 m6 s12">
+    <div class="product-card">
+      <img src="https://i.imgur.com/efWfApo.jpeg" class="product-image" alt="SHOOT ME">
+      <div class="product-description">
+        <strong>SHOOT ME</strong><br>
+        Artist: DAY6<br>
+        Genre: Rock<br>
+        Price: 800 PHP<br>
+        <button onclick="addToCart('SHOOT ME', 800)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="w3-col l4 m6 s12">
+    <div class="product-card">
+      <img src="https://i.imgur.com/vvMHSG7.jpeg" class="product-image" alt="THE BOOK OF US: GRAVITY">
+      <div class="product-description">
+        <strong>THE BOOK OF US: GRAVITY</strong><br>
+        Artist: DAY6<br>
+        Genre: Rock/Pop<br>
+        Price: 1200 PHP<br>
+        <button onclick="addToCart('THE BOOK OF US: GRAVITY', 1200)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="w3-col l4 m6 s12">
+    <div class="product-card">
+      <img src="https://i.imgur.com/cja2ZYQ.jpeg" class="product-image" alt="THE WINNING">
+      <div class="product-description">
+        <strong>THE WINNING</strong><br>
+        Artist: IU<br>
+        Genre: Ballad/Pop<br>
+        Price: 999 PHP<br>
+        <button onclick="addToCart('THE WINNING', 999)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 6 -->
+  <div class="w3-col l4 m6 s12">
+    <div class="product-card">
+      <img src="https://i.imgur.com/VnVKctB.jpeg" class="product-image" alt="WHIPLASH">
+      <div class="product-description">
+        <strong>WHIPLASH</strong><br>
+        Artist: AESPA<br>
+        Genre: EDM/K-pop<br>
+        Price: 1000 PHP<br>
+        <button onclick="addToCart('WHIPLASH', 1000)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  <!-- Cart Section -->
+  <div id="cart" class="cart-section">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <div id="cart-total" class="cart-total">Total: 0 PHP</div>
+    <button onclick="placeOrder()" class="cart-button">Place Order</button>
+
+  </div>
+
+  <script>
+    const cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      renderCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItemsDiv = document.getElementById("cart-items");
+      const cartTotalDiv = document.getElementById("cart-total");
+      cartItemsDiv.innerHTML = "";
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        cartItemsDiv.innerHTML += `
+          <div class="cart-item">
+            ${item.name} - ${item.price} PHP 
+            <button onclick="removeFromCart(${index})">Remove</button>
+          </div>`;
+      });
+
+      cartTotalDiv.innerText = `Total: ${total} PHP`;
+    }
+
+   function placeOrder() {
+  if (cart.length === 0) {
+    alert("🛒 Your cart is empty. Please add items before placing an order.");
+    return;
+  }
+
+  const confirmOrder = confirm("📦 Are you sure you want to place this order?");
+  if (confirmOrder) {
+    alert("✅ Order placed successfully! Thank you for shopping!");
+    cart.length = 0; // Clear the cart
+    renderCart(); // Re-render the cart
+  }
+}
+
+  </script>
+
+</body>
+</html>

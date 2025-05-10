@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-
+awesome/4.6.3/css/font-awesome.min.css">
+<!--<link rel="icon" href="New%20Folder/favicon.ico" type="image/x-icon">-->
+
+	<style> 
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+}
+
+.nav-spacer {
+  flex: 1;
+}
+	</style>
+
+<body>
+<nav class="w3-bar w3-black nav-flex">
+  <div class="nav-left">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <div class="nav-right">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+  </div>
+</nav>
+<script type="text/javascript">
+    var grade = parseFloat(prompt("Enter Final Grade:"));
+
+    if (grade > 100 || grade < 0) { 
+        document.write("Invalid");
+    } 
+    else if (grade >= 98) { 
+        document.write("With Highest Honour");
+    } 
+    else if (grade >= 95) { 
+        document.write("With High Honour");
+    } 
+    else if (grade >= 90) { 
+        document.write("With Honour");
+    } 
+    else if (grade >= 85) { 
+        document.write("Satisfactory");
+    } 
+    else if (grade >= 80) { 
+        document.write("Very Good");
+    } 
+    else if (grade >= 75) { 
+        document.write("Good");
+    } 
+    else if (grade == 74) { 
+        document.write("Failed");
+    } 
+    else { 
+        document.write("Get Help");
+    }
+</script>
+</body>
+</html>

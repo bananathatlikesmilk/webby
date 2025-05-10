@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Cart - Activity 4</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <style>
+    body {
+  	font-family: Arial, sans-serif;
+	  background-color: #fce4ec; /* Soft pink */
+  /* OR any other color like #e0f7fa, #f0f0f0, #282c34, etc. */
+	  background-size: cover;
+ 	 margin: 0;
+ 	 padding: 0;
+ 	 display: flex;
+ 	 justify-content: center;
+ 	 align-items: flex-start;
+ 	 padding-top: 100px;
+	}
+
+
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .w3-bar {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0 20px;
+    }
+
+    .w3-bar-item {
+      transition: background 0.3s ease;
+    }
+
+    .w3-bar-item:hover {
+     // background-color: #3498db !important;//
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+
+
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .product button,
+    #orderBtn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .product button {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .product button:hover {
+      background-color: #2980b9;
+    }
+
+    #cart {
+      margin-top: 20px;
+    }
+
+    .cart-item {
+      background: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remove-btn {
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background-color: darkred;
+    }
+
+    #orderBtn {
+      display: block;
+      margin: 20px auto 0;
+      background-color: green;
+      color: white;
+    }
+
+    #orderBtn:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="w3-bar w3-black nav-flex">
+    <div class="nav-left">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Simple Cart</h1>
+
+  <div class="product">
+    <span>Apple</span>
+    <button onclick="addToCart('Apple')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>Banana</span>
+    <button onclick="addToCart('Banana')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>Orange</span>
+    <button onclick="addToCart('Orange')">Add to Cart</button>
+  </div>
+
+  <div id="cart">
+    <h3>Cart:</h3>
+    <div id="cartItems"></div>
+    <button id="orderBtn" onclick="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+<script>
+  function addToCart(item) {
+    const confirmAdd = confirm(`Add "${item}" to cart?`);
+    if (!confirmAdd) return;
+
+    const cartItems = document.getElementById("cartItems");
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `
+      <span>${item}</span>
+      <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+    `;
+    cartItems.appendChild(div);
+  }
+
+  function removeItem(button) {
+    const confirmRemove = confirm("Are you sure you want to remove this item?");
+    if (confirmRemove) {
+      button.parentElement.remove();
+    }
+  }
+
+  function placeOrder() {
+    const cartItems = document.getElementById("cartItems");
+
+    if (cartItems.children.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    const confirmOrder = confirm("Do you want to place the order?");
+    if (confirmOrder) {
+      alert("Order placed successfully!");
+      cartItems.innerHTML = ""; // Clear cart
+    }
+  }
+</script>
+
+</body>
+</html>

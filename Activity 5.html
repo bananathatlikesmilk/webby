@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity 5 - Product Total</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #BFEFFF;
+      text-align: center;
+      padding-top: 80px; /* Added padding to offset the fixed header */
+      margin: 0;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      padding: 0px 0; /* Reduced padding for the header */
+    }
+
+    .w3-bar {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0 20px;
+    }
+
+    .w3-bar-item {
+      transition: background 0.3s ease;
+    }
+
+    .w3-bar-item:hover {
+      background-color: #3498db;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"], input[type="number"] {
+      padding: 10px;
+      width: 45%;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      padding: 10px;
+      background: #f0f8ff;
+      border-radius: 8px;
+    }
+
+    .product span {
+      flex: 1;
+      text-align: left;
+    }
+
+    .product button {
+      background-color: red;
+      margin-left: 10px;
+    }
+
+   .product button:hover {
+      background-color: darkred;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="w3-bar w3-black nav-flex">
+    <div class="nav-left">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+    </div>
+  </nav>
+</header>
+
+  <div class="container">
+    <h2>Activity 5 - Product Total</h2>
+
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="productPrice" placeholder="Product Price">
+    <button onclick="addProduct()">Add Product</button>
+
+    <div id="productList"></div>
+
+    <div class="total" id="total">Total: ₱0.00</div>
+  </div>
+
+  <script>
+    let total = 0;
+
+    function addProduct() {
+      const name = document.getElementById('productName').value.trim();
+      const price = parseFloat(document.getElementById('productPrice').value);
+
+      if (!name || isNaN(price)) {
+        alert("Please enter both product name and a valid price.");
+        return;
+      }
+
+      const productList = document.getElementById('productList');
+
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = name;
+
+      const priceSpan = document.createElement('span');
+      priceSpan.textContent = `₱${price.toFixed(2)}`;
+
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = 'Remove';
+      removeBtn.onclick = function () {
+        const confirmDelete = confirm(`Are you sure you want to remove "${name}"?`);
+        if (confirmDelete) {
+          productList.removeChild(productDiv);
+          total -= price;
+          updateTotal();
+        }
+      };
+
+      productDiv.appendChild(nameSpan);
+      productDiv.appendChild(priceSpan);
+      productDiv.appendChild(removeBtn);
+      productList.appendChild(productDiv);
+
+      total += price;
+      updateTotal();
+
+      // Clear input fields
+      document.getElementById('productName').value = '';
+      document.getElementById('productPrice').value = '';
+    }
+
+    function updateTotal() {
+      document.getElementById('total').textContent = `Total: ₱${total.toFixed(2)}`;
+    }
+  </script>
+
+</body>
+</html>

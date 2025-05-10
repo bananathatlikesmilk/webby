@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <title>Subject Teacher Finder</title>
+
+		<style> 
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+}
+
+.nav-spacer {
+  flex: 1;
+}
+	</style>
+    <script type="text/javascript">
+        function findTeacher() {
+            let subject = prompt("Enter your subject (e.g., pcom, oop, rph, pe, etc.):").toLowerCase();
+            let teacher = "";
+
+            switch (subject) {
+                case "pcom":
+                    teacher = "Kristine";
+                    break;
+                case "oop":
+                case "dcn":
+                    teacher = "Sir Jaymark";
+                    break;
+                case "rph":
+                    teacher = "Farrah";
+                    break;
+                case "rlw":
+                    teacher = "Andy";
+                    break;
+                case "ict":
+                case "2d":
+                    teacher = "Sir Sam";
+                    break;
+                case "fil":
+                    teacher = "Mariella";
+                    break;
+                case "pe":
+                    teacher = "Errol";
+                    break;
+                default:
+                    teacher = "Nein";
+            }
+
+            document.getElementById("output").innerHTML = `<h2>Teacher for <b>${subject}</b> is: ${teacher}</h2>`;
+        }
+    </script>
+</head>
+
+<body onload="findTeacher()">
+
+    <!-- Navigation Bar -->
+   <nav class="w3-bar w3-black nav-flex">
+  <div class="nav-left">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <div class="nav-right">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+  </div>
+</nav>
+
+    <!-- Display result here -->
+    <div id="output" class="w3-container w3-padding"></div>
+
+</body>
+</html>

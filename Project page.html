@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Compilation</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://miro.medium.com/v2/resize:fit:7172/1*mWHwLyyEYnFoBnwF0stgTA.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .w3-bar {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0 20px;
+    }
+
+    .w3-bar-item {
+      transition: background 0.3s ease;
+    }
+
+    .w3-bar-item:hover {
+     // background-color: #3498db !important;//
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      max-width: 1200px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+.card {
+  background: rgba(255, 255, 255, 0.4);  /* Less opacity for subtle frosted effect */
+  backdrop-filter: blur(6px);  /* Apply a mild blur to the background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #3498db;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 10px 0 5px;
+      color: #2c3e50;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="w3-bar w3-black nav-flex">
+    <div class="nav-left">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Mid Term Projects</h1>
+  <div class="button-grid">
+    <div class="card">
+
+      <i class="fa fa-university"></i>
+      <h2>Hello + Others</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/BSIS%202A%20.html'">Open</button>
+    </div>
+
+    <div class="card">
+      <i class="fa fa-sitemap"></i>
+      <h2>Registration Form</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/DCN.html'">Open</button>
+    </div>
+
+    <div class="card">
+      <i class="fa fa-pencil-square-o"></i>
+      <h2>Pop Up Registration</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Pop%20Up%20Registration.html'">Open</button>
+    </div>
+  </div>
+
+  <h1 style="margin-top: 60px;">Final Term Projects</h1>
+  <div class="button-grid">
+
+    <div class="card">
+      <i class="fa fa-line-chart"></i>
+      <h2>Grade Distinction</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/grade%20thingy.html'">Open</button>
+    </div>
+
+    <div class="card">
+      <i class="fa fa-graduation-cap"></i>
+      <h2>College Distinction</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/college%20thingy.html'">Open</button>
+    </div>
+
+<div class="card">
+      <i class="fa fa-sign-in"></i>
+      <h2>Log In</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/log%20in%202.0.html'">Open</button>
+    </div>
+
+    <div class="card">
+      <i class="fa fa-shopping-cart"></i>
+      <h2>Product Cart</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Activity%204.html'">Open</button>
+    </div>
+
+    <div class="card">
+      <i class="fa fa-building"></i>
+      <h2>Product Total</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Activity%205.html'">Open</button>
+    </div>
+   </div>
+
+  <h1 style="margin-top: 60px;">Others</h1>
+  <div class="button-grid">
+
+   <div class="card">
+      <i class="fa fa-cogs"></i>
+      <h2>Bit Wise</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/bitwise.html'">Open</button>
+    </div>
+
+    <div class="card">
+      <i class="fa fa-random"></i>
+      <h2>If Else</h2>
+      <button onclick="window.location.href='file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/if%20else%20blah%20blah.html'">Open</button>
+    </div>
+
+
+  </div>
+</div>
+
+
+</body>
+</html>

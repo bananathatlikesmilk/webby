@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-
+awesome/4.6.3/css/font-awesome.min.css">
+<!--<link rel="icon" href="New%20Folder/favicon.ico" type="image/x-icon">-->
+  <title> DCN Activity 2 </title>
+
+<!--ALL INSIDE STYLE IS CSS-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFFDD0;
+      /*text-align: center;*/
+      padding: 0px;
+    }
+
+   /*the 2 box thingy*/
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+	/*the design inside the 2 box thingy*/
+    .box {
+      background: linear-gradient(to bottom, #8e6b23, #d9a679);
+      border: 2px solid brown;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      border-radius: 10px;
+    }
+
+	/* colour of the h2 font in 2 box thingy*/
+    .box h2 {
+      color: #FFFDD0;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #FFFDD0;
+    }
+
+	/* this is the input field*/
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #FFFDD0;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+     
+    button:hover {
+      background-color: darkgreen;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button.clear {
+      background-color: red;
+    }
+
+    button.clear:hover {
+    background-color: darkred;
+    transform: translateY(0px);
+  }
+
+	/* the colour of the first name etc.*/
+    .info-label {
+      font-weight: bold;
+      color: #FFFDD0;
+    }
+
+    .info-value {
+      color: #333;
+    }
+
+    .info-item {
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      text-align: center
+    }
+
+    h2 {
+      text-align: center
+    }
+
+    div {
+      text-align: center
+    }
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+}
+
+.nav-spacer {
+  flex: 1;
+}	
+  </style>
+</head>
+<body>
+<nav class="w3-bar w3-black nav-flex">
+  <div class="nav-left">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <div class="nav-right">
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+    <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+  </div>
+</nav>
+  <h3 text-align: left> Activity 2 </h3>
+
+	<!-- this is to make the words below or above closer together-->
+  <h5 style="margin-bottom: 2px;">Name: Kelvin Yap</h5>
+  <h5 style="margin-top: 0;">Course: BSIS 2A</h5>
+
+  <div class="container">
+    <!-- Form Section -->
+    <div class="box">
+
+      <h2>Enter your details</h2>
+
+      <form id="userForm">
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" placeholder="Enter your address">
+        </div>
+
+        <div class="form-group">
+          <label for="contactNumber">Contact Number:</label>
+          <input type="number" id="contactNumber" name="contactNumber" placeholder="Enter your contact number">
+        </div>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+        <button type="button" class="clear" onclick="clearForm()">Clear</button>
+      </form>
+    </div>
+
+    <!-- Information Display Section -->
+
+    <div class="box">
+      <h2>Your Information</h2>
+      <div id="infoDisplay">
+        <div class="info-item"><span class="info-label">First Name:</span> <span class="info-value" id="displayFirstName"></span></div>
+        <div class="info-item"><span class="info-label">Last Name:</span> <span class="info-value" id="displayLastName"></span></div>
+        <div class="info-item"><span class="info-label">Address:</span> <span class="info-value" id="displayAddress"></span></div>
+        <div class="info-item"><span class="info-label">Contact Number:</span> <span class="info-value" id="displayContactNumber"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>function submitForm() {
+  const firstName = document.getElementById('displayFirstName');
+  const lastName = document.getElementById('displayLastName');
+  const address = document.getElementById('displayAddress');
+  const contactNumber = document.getElementById('displayContactNumber');
+  
+  // Set values
+  firstName.textContent = document.getElementById('firstName').value || '';
+  lastName.textContent = document.getElementById('lastName').value || '';
+  address.textContent = document.getElementById('address').value || '';
+  contactNumber.textContent = document.getElementById('contactNumber').value || '';
+
+  // Apply color styles to outputs
+  const outputFields = [firstName, lastName, address, contactNumber];
+  outputFields.forEach(field => {
+    field.style.color = "#FFFDD0"; 
+    field.style.fontWeight = "bold"; 
+  });
+}
+
+
+    function clearForm() {
+      document.getElementById('userForm').reset();
+      document.getElementById('displayFirstName').textContent = '';
+      document.getElementById('displayLastName').textContent = '';
+      document.getElementById('displayAddress').textContent = '';
+      document.getElementById('displayContactNumber').textContent = '';
+
+    }
+  </script>
+
+  <script>
+     document.getElementById('userForm').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault(); // Prevent form submission
+    const formElements = Array.from(this.elements);
+    const index = formElements.indexOf(document.activeElement);
+    
+    if (index > -1 && index < formElements.length - 2) {
+      formElements[index + 1].focus(); // Focus on the next input
+       }
+     }
+   }
+ );
+
+</script>
+</body>
+</html>

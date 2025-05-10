@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dad's Buffet</title>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+    nav.w3-bar {
+      flex: 0 0 auto;
+      z-index: 10;
+    }
+
+    .slideshow-container {
+      position: relative;
+      flex: 1 1 auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 0;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 2;
+    }
+
+    .arrow.left {
+      left: 0;
+    }
+
+    .arrow.right {
+      right: 0;
+    }
+
+    .info-section {
+      flex: 0 0 auto;
+      text-align: center;
+      color: white;
+      padding: 10px 0;
+    }
+
+    footer {
+      flex: 0 0 auto;
+      z-index: 10;
+    }
+
+    /* YouTube Video Background Styling */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .video-background iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Prevent interaction with the video */
+    }
+
+    /* Optional dark overlay for better contrast */
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* adjust opacity here */
+      z-index: -1;
+    }
+
+    /* Ensure main content sits on top of the video */
+    nav.w3-bar,
+    .slideshow-container,
+    .info-section,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- YouTube Video Background -->
+  <div class="video-background">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sWXGbkM0tBI?autoplay=1&mute=1&loop=1&playlist=sWXGbkM0tBI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <!-- Optional: semi-transparent overlay for better readability -->
+  <div class="video-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="w3-bar w3-black nav-flex">
+    <div class="nav-left">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+    </div>
+  </nav>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <button class="arrow left">&#10094;</button>
+    <div class="carousel-track">
+      <img class="carousel-slide" src="https://i.imgur.com/LZOZYAy.jpeg" />
+      <img class="carousel-slide" src="https://i.imgur.com/iREqiyi.jpeg" />
+      <img class="carousel-slide" src="https://i.imgur.com/efWfApo.jpeg" />
+      <img class="carousel-slide" src="https://i.imgur.com/vvMHSG7.jpeg" />
+      <img class="carousel-slide" src="https://i.imgur.com/cja2ZYQ.jpeg" />
+      <img class="carousel-slide" src="https://i.imgur.com/VnVKctB.jpeg" />
+    </div>
+    <button class="arrow right">&#10095;</button>
+  </div>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <h2>Hanteo Charts</h2>
+    <p><i>Albums from the World</i></p>
+    <p>TWICE, LE SSERAFIM, ITZY, AESPA, IVE, etc.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-center w3-black w3-xlarge">
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <p class="w3-medium">
+      Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+    </p>
+  </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    setInterval(nextSlide, 5000); // auto slide every 5 seconds
+    showSlide(currentIndex); // show first slide
+  </script>
+
+</body>
+</html>

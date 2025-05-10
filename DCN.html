@@ -23,20 +23,22 @@ awesome/4.6.3/css/font-awesome.min.css">
 
    /*the 2 box thingy*/
     .container {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 10px;
+}
 
 	/*the design inside the 2 box thingy*/
     .box {
-      background: linear-gradient(to bottom, #8e6b23, #d9a679);
-      border: 2px solid brown;
-      padding: 20px;
-      margin: 10px;
-      width: 300px;
-      border-radius: 10px;
-    }
+  background: linear-gradient(to bottom, #8e6b23, #d9a679);
+  border: 2px solid brown;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
 	/* colour of the h2 font in 2 box thingy*/
     .box h2 {

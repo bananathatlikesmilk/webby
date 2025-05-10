@@ -1,17 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet"
-href="https://www.w3schools.com/w3css/3/w3.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-
-awesome/4.6.3/css/font-awesome.min.css">
-<!--<link rel="icon" href="New%20Folder/favicon.ico" type="image/x-icon">-->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Log In</title>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
   <style>
     * {
       box-sizing: border-box;
@@ -23,9 +19,31 @@ awesome/4.6.3/css/font-awesome.min.css">
       background: url("https://miro.medium.com/v2/resize:fit:7172/1*mWHwLyyEYnFoBnwF0stgTA.png") no-repeat center center fixed;
       background-size: cover;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+    }
+
+    nav.w3-bar {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+    }
+
+    .nav-spacer {
+      flex: 1;
     }
 
     .container {
@@ -36,6 +54,7 @@ awesome/4.6.3/css/font-awesome.min.css">
       width: 100%;
       max-width: 320px;
       text-align: center;
+      margin-top: 60px;
     }
 
     h1 {
@@ -52,7 +71,6 @@ awesome/4.6.3/css/font-awesome.min.css">
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 14px;
-      box-sizing: border-box;
     }
 
     .submit {
@@ -68,24 +86,26 @@ awesome/4.6.3/css/font-awesome.min.css">
     .submit:hover {
       background-color: #2980b9;
     }
-
-    .nav-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-left, .nav-right {
-  display: flex;
-}
-
-.nav-spacer {
-  flex: 1;
-}
   </style>
 </head>
+
 <body>
+
+  <!-- Fixed Navigation Bar -->
+  <nav class="w3-bar w3-black nav-flex">
+    <div class="nav-left">
+      <a href="website-try-1.html" class="w3-button w3-bar-item">Home</a>
+      <a href="project-page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="product-page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="profile.html" class="w3-button w3-bar-item">Profile</a>
+    </div>
+  </nav>
+
+  <!-- Login Container -->
   <div class="container">
     <h1>Log In</h1>
     <form name="login" onsubmit="return validateForm();" method="post">
@@ -95,20 +115,7 @@ awesome/4.6.3/css/font-awesome.min.css">
     </form>
   </div>
 
-   <!-- Navigation Bar -->
-    <nav class="w3-bar w3-black nav-flex">
-    <div class="nav-left">
-     <a href="Website try 1 .html" class="w3-button w3-bar-item">Home</a>
-    <a href="Project page.html" class="w3-button w3-bar-item">Projects</a>
-    <a href="product page.html" class="w3-button w3-bar-item">Products</a>
-  </div>
-  <div class="nav-spacer"></div>
-  <div class="nav-right">
-    <a href="cart.html" class="w3-button w3-bar-item">Developers</a>
-    <a href="profile.html" class="w3-button w3-bar-item">Profile</a>
-    </div>
-  </nav>
-
+  <!-- JS for Login Validation -->
   <script>
     var count = 2;
 
@@ -129,7 +136,7 @@ awesome/4.6.3/css/font-awesome.min.css">
 
       if (valid) {
         alert("Steve logged in");
-        window.location.href = "file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html";
+        window.location.href = "website-try-1.html";
         return;
       }
 

@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Simple Cart - Activity 4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
   <style>
     body {
-  	font-family: Arial, sans-serif;
-	  background-color: #fce4ec; /* Soft pink */
-  /* OR any other color like #e0f7fa, #f0f0f0, #282c34, etc. */
-	  background-size: cover;
- 	 margin: 0;
- 	 padding: 0;
- 	 display: flex;
- 	 justify-content: center;
- 	 align-items: flex-start;
- 	 padding-top: 100px;
-	}
-
-
+      font-family: Arial, sans-serif;
+      background-color: #fce4ec;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 100px;
+    }
 
     header {
       position: fixed;
@@ -39,7 +35,8 @@
     }
 
     .w3-bar-item:hover {
-     // background-color: #3498db !important;//
+      background-color: #f2f2f2 !important;
+      color: black !important;
     }
 
     .nav-flex {
@@ -51,14 +48,12 @@
 
     .nav-left, .nav-right {
       display: flex;
+      flex-wrap: wrap;
     }
 
     .nav-spacer {
       flex: 1;
     }
-
-
-
 
     .container {
       background: white;
@@ -66,12 +61,14 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       max-width: 600px;
-      width: 100%;
+      width: 90%;
+      margin: auto;
     }
 
     h1 {
       text-align: center;
       color: #333;
+      font-size: 26px;
     }
 
     .product {
@@ -79,16 +76,23 @@
       justify-content: space-between;
       align-items: center;
       margin: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .product span {
+      font-size: 16px;
+      margin-bottom: 8px;
     }
 
     .product button,
     #orderBtn {
-      padding: 8px 16px;
+      padding: 10px 16px;
       border: none;
       border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s ease;
+      font-size: 14px;
     }
 
     .product button {
@@ -112,6 +116,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .remove-btn {
@@ -121,6 +126,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 13px;
     }
 
     .remove-btn:hover {
@@ -137,6 +143,40 @@
     #orderBtn:hover {
       background-color: darkgreen;
     }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding-top: 80px;
+      }
+
+      .product, .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product button, .remove-btn {
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      .nav-left, .nav-right {
+        flex-direction: column;
+      }
+
+      .w3-bar-item {
+        font-size: 14px !important;
+        padding: 8px !important;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -144,14 +184,14 @@
 <header>
   <nav class="w3-bar w3-black nav-flex">
     <div class="nav-left">
-     <a href="Website try 1 .html" class="w3-button w3-bar-item">Home</a>
-    <a href="Project page.html" class="w3-button w3-bar-item">Projects</a>
-    <a href="product page.html" class="w3-button w3-bar-item">Products</a>
-  </div>
-  <div class="nav-spacer"></div>
-  <div class="nav-right">
-    <a href="cart.html" class="w3-button w3-bar-item">Developers</a>
-    <a href="profile.html" class="w3-button w3-bar-item">Profile</a>
+      <a href="Website try 1 .html" class="w3-button w3-bar-item">Home</a>
+      <a href="Project page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="product page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="profile.html" class="w3-button w3-bar-item">Profile</a>
     </div>
   </nav>
 </header>

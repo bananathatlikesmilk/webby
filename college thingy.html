@@ -3,136 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet"
-href="https://www.w3schools.com/w3css/3/w3.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-
-awesome/4.6.3/css/font-awesome.min.css">
-<!--<link rel="icon" href="New%20Folder/favicon.ico" type="image/x-icon">-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <title>Student Data Entry</title>
-<style> 
+    <style> 
+        body {
+            background-color: teal;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 0%;
+        }
 
-body
-{
-background-color: teal;
-display:flex;
-flex-direction:column;
-justify-content: space-around;
-margin-top: 0%;
-}
+        .main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
 
-.main
-{
-display:flex;
-flex-direction: row;
-justify-content: space-around;
-flex-wrap: wrap;
-margin-top: top;
-}
+        .column1, .column2 {
+            background-color: #d35400;
+            width: 40%;
+            border: solid 2px black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
-.column1, .column2
-{
-background-color: #d35400;
-width: 40%
-border: solid 2px black;
-border-radius: 10px;
-display:flex;
-flex-direction: column;
-padding: 20px;
-margin-bottom: 20px;
-}
+        .column1 {
+            align-items: center;
+            text-align: center;
+        }
 
-.column1
-{
-align-items: center;
-text-align: center;
-}
+        .column2 {
+            text-align: center;
+        }
 
-.column2
-{
-text-align: center;
-}
+        label {
+            text-align: left;
+            margin-top: 10px;
+        }
 
-label
-{
-text-align: left;
-margin-top: 10px;
-}
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 14px;
+        }
 
-input
-{
-width: 300px;
-padding: 10px;
-font-size: 14px;
-}
+        button {
+            margin-top: 20px;
+            width: 150px;
+            height: 50px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-button
-{
-margin-top: 20px;
-width: 150px;
-height: 50px;
-font-size: 16px;
-cursor: pointer;
-}
-#btn1
-{
-background-color: purple;
-color: orange;
-border-radius: 10px;
-border: none;
-}
+        #btn1 {
+            background-color: purple;
+            color: orange;
+            border-radius: 10px;
+            border: none;
+        }
 
-#btn1:hover
-{
-background-color: purple;
-color: orange;
-border: 2px solid orange;
-}
+        #btn1:hover {
+            background-color: purple;
+            color: orange;
+            border: 2px solid orange;
+        }
 
-#btn2
-{
-background-color: magenta;
-color: orange;
-border-radius: 10px;
-border: none;
-}
+        #btn2 {
+            background-color: magenta;
+            color: orange;
+            border-radius: 10px;
+            border: none;
+        }
 
-#btn2:hover
-{
-background-color: magenta;
-color: orange;
-border: 2px solid orange;
-}
+        #btn2:hover {
+            background-color: magenta;
+            color: orange;
+            border: 2px solid orange;
+        }
 
-#gradeTable 
-{
-background-color: purple;
-font-family: times new roman;
-font-size: 16px;
-border-collapse: collapse;
-}
-th,td 
-{
-border:1px solid orange;
-}
+        #gradeTable {
+            background-color: purple;
+            font-family: times new roman;
+            font-size: 16px;
+            border-collapse: collapse;
+        }
 
-.nav-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
+        th, td {
+            border: 1px solid orange;
+        }
 
-.nav-left, .nav-right {
-  display: flex;
-}
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-.nav-spacer {
-  flex: 1;
-}
+        .nav-left, .nav-right {
+            display: flex;
+        }
 
- @media screen and (max-width: 600px) {
+        .nav-spacer {
+            flex: 1;
+        }
+
+        @media screen and (max-width: 600px) {
             .main {
                 flex-direction: column;
                 align-items: center;
@@ -154,28 +136,23 @@ border:1px solid orange;
                 font-size: 14px; /* Smaller font size for mobile */
             }
         }
-</style>
+    </style>
 </head>
 <body>
-
   <nav class="w3-bar w3-black nav-flex">
     <div class="nav-left">
-     <a href="Website try 1 .html" class="w3-button w3-bar-item">Home</a>
-    <a href="Project page.html" class="w3-button w3-bar-item">Projects</a>
-    <a href="product page.html" class="w3-button w3-bar-item">Products</a>
-  </div>
-  <div class="nav-spacer"></div>
-  <div class="nav-right">
-    <a href="cart.html" class="w3-button w3-bar-item">Developers</a>
-    <a href="profile.html" class="w3-button w3-bar-item">Profile</a>
+      <a href="Website try 1 .html" class="w3-button w3-bar-item">Home</a>
+      <a href="Project page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="product page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="profile.html" class="w3-button w3-bar-item">Profile</a>
     </div>
   </nav>
 
-
-<!-- # declaring id
-. declare class -->
-
-<div class="main">
+  <div class="main">
     <div class="column1">
         <h1>Enter Student Data</h1>
         
@@ -214,55 +191,54 @@ border:1px solid orange;
             <tbody></tbody>
         </table>
     </div>
-</div>
+  </div>
 
-<script>
-function insertGrade() {
-    if (!confirm('Are you sure you want to add all data to the table?')) return;
+  <script>
+    function insertGrade() {
+        if (!confirm('Are you sure you want to add all data to the table?')) return;
 
-    const sno = document.getElementById('sno').value.trim();
-    const lname = document.getElementById('lname').value.trim();
-    const fname = document.getElementById('fname').value.trim();
-    const crs = document.getElementById('crs').value.trim();
-    const score = parseFloat(document.getElementById('score').value);
+        const sno = document.getElementById('sno').value.trim();
+        const lname = document.getElementById('lname').value.trim();
+        const fname = document.getElementById('fname').value.trim();
+        const crs = document.getElementById('crs').value.trim();
+        const score = parseFloat(document.getElementById('score').value);
 
-    if (!sno || !lname || !fname || !crs || isNaN(score) || score < 1 || score > 5) {
-        alert('Please fill in all fields with valid data (Grade must be between 1 and 5).');
-        return;
+        if (!sno || !lname || !fname || !crs || isNaN(score) || score < 1 || score > 5) {
+            alert('Please fill in all fields with valid data (Grade must be between 1 and 5).');
+            return;
+        }
+
+        let distinction;
+        if (score >= 1 && score <= 1.2) {
+            distinction = 'SUMMA CUM LAUDE';
+        } else if (score > 1.2 && score <= 1.5) {
+            distinction = 'MAGNA CUM LAUDE';
+        } else if (score > 1.5 && score <= 2) {
+            distinction = 'CUM LAUDE';
+        } else if (score > 2 && score <= 3.99) {
+            distinction = 'PASSED';
+        } else {
+            distinction = 'FAILED';
+        }
+
+        const table = document.getElementById('gradeTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        newRow.insertCell(0).innerHTML = sno;
+        newRow.insertCell(1).innerHTML = lname;
+        newRow.insertCell(2).innerHTML = fname;
+        newRow.insertCell(3).innerHTML = crs;
+        newRow.insertCell(4).innerHTML = score.toFixed(2);
+        newRow.insertCell(5).innerHTML = distinction;
     }
 
-    let distinction;
-    if (score >= 1 && score <= 1.2) {
-        distinction = 'SUMMA CUM LAUDE';
-    } else if (score > 1.2 && score <= 1.5) {
-        distinction = 'MAGNA CUM LAUDE';
-    } else if (score > 1.5 && score <= 2) {
-        distinction = 'CUM LAUDE';
-    } else if (score > 2 && score <= 3.99) {
-        distinction = 'PASSED';
-    } else {
-        distinction = 'FAILED';
+    function clrfrm() {
+        document.getElementById('sno').value = '';
+        document.getElementById('lname').value = '';
+        document.getElementById('fname').value = '';
+        document.getElementById('crs').value = '';
+        document.getElementById('score').value = '';
     }
-
-    const table = document.getElementById('gradeTable').getElementsByTagName('tbody')[0];
-    const newRow = table.insertRow();
-
-    newRow.insertCell(0).innerHTML = sno;
-    newRow.insertCell(1).innerHTML = lname;
-    newRow.insertCell(2).innerHTML = fname;
-    newRow.insertCell(3).innerHTML = crs;
-    newRow.insertCell(4).innerHTML = score.toFixed(2);
-    newRow.insertCell(5).innerHTML = distinction;
-}
-
-function clrfrm() {
-    document.getElementById('sno').value = '';
-    document.getElementById('lname').value = '';
-    document.getElementById('fname').value = '';
-    document.getElementById('crs').value = '';
-    document.getElementById('score').value = '';
-}
-</script>
-
+  </script>
 </body>
 </html>

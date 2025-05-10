@@ -126,6 +126,52 @@
     margin-top: 40px; /* smaller top margin for login box */
   }
 }
+
+    .input-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"] {
+  flex: 1;
+  min-width: 120px;
+  width: 45%;
+  margin: 0;
+}
+
+.input-group button {
+  flex: 1;
+  min-width: 120px;
+  width: 45%;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .input-group input[type="text"],
+  .input-group input[type="number"],
+  .input-group button {
+    width: 100%;
+  }
+
+  .product {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .product span, .product button {
+    margin: 5px 0;
+  }
+}
+
   </style>
 </head>
 <body>

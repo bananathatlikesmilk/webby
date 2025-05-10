@@ -29,6 +29,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      flex-wrap: wrap;
     }
 
     .nav-flex {
@@ -51,8 +52,8 @@
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      width: 100%;
-      max-width: 320px;
+      width: 90%;
+      max-width: 350px;
       text-align: center;
       margin-top: 60px;
     }
@@ -86,6 +87,14 @@
     .submit:hover {
       background-color: #2980b9;
     }
+
+    @media screen and (max-width: 480px) {
+  nav .w3-bar-item {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
   </style>
 </head>
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Compilation</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -34,7 +35,7 @@
     }
 
     .w3-bar-item:hover {
-     // background-color: #3498db !important;//
+      background-color: #3498db !important;
     }
 
     .nav-flex {
@@ -60,6 +61,7 @@
       max-width: 1200px;
       width: 90%;
       text-align: center;
+      margin-top: 140px; /* Ensures content doesn't overlap with fixed nav */
     }
 
     h1 {
@@ -75,20 +77,18 @@
       gap: 20px;
     }
 
-.card {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(6px);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  width: 250px;
-  text-align: center;
-  transition: transform 0.2s ease;
-  flex: 1 1 250px; /* allows flexible resizing */
-  max-width: 90vw;
-}
-
-
+    .card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.2s ease;
+      flex: 1 1 250px; /* allows flexible resizing */
+      max-width: 90vw;
+    }
 
     .card:hover {
       transform: translateY(-5px);
@@ -131,19 +131,34 @@
     }
 
     @media screen and (max-width: 600px) {
-  nav.w3-bar {
-    padding: 0 10px;
-  }
+      .w3-bar-item {
+        font-size: 14px !important;
+        padding: 6px 8px !important;
+      }
 
-  .w3-bar-item {
-    font-size: 14px !important;
-    padding: 6px 8px !important;
-  }
+      .container {
+        margin-top: 100px; /* Adjust the top margin for mobile */
+        padding: 20px; /* Adjust padding for smaller screens */
+      }
 
-  .container {
-    margin-top: 40px; /* smaller top margin for login box */
-  }
-}
+      h1 {
+        font-size: 24px; /* Make the title smaller */
+      }
+
+      .button-grid {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 15px; /* Smaller gap between cards */
+      }
+
+      .card {
+        width: 100%; /* Cards take up full width on smaller screens */
+        max-width: 100%; /* Remove max-width restriction */
+      }
+
+      .w3-bar {
+        padding: 0 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -167,7 +182,6 @@
   <h1>Mid Term Projects</h1>
   <div class="button-grid">
     <div class="card">
-
       <i class="fa fa-university"></i>
       <h2>Hello + Others</h2>
       <button onclick="window.location.href='BSIS 2A .html'">Open</button>
@@ -201,7 +215,7 @@
       <button onclick="window.location.href='college thingy.html'">Open</button>
     </div>
 
-<div class="card">
+    <div class="card">
       <i class="fa fa-sign-in"></i>
       <h2>Log In</h2>
       <button onclick="window.location.href='log in 2.0.html'">Open</button>
@@ -218,12 +232,11 @@
       <h2>Product Total</h2>
       <button onclick="window.location.href='Activity 5.html'">Open</button>
     </div>
-   </div>
+  </div>
 
   <h1 style="margin-top: 60px;">Others</h1>
   <div class="button-grid">
-
-   <div class="card">
+    <div class="card">
       <i class="fa fa-cogs"></i>
       <h2>Bit Wise</h2>
       <button onclick="window.location.href='bitwise.html'">Open</button>
@@ -234,11 +247,8 @@
       <h2>If Else</h2>
       <button onclick="window.location.href='if else blah blah.html'">Open</button>
     </div>
-
-
   </div>
 </div>
-
 
 </body>
 </html>

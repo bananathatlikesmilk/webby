@@ -32,20 +32,25 @@ awesome/4.6.3/css/font-awesome.min.css">
 
    /*the 2 box thingy*/
     .container {
-      display: fixed;
-      justify-content: center;
-      margin-top: 50px;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding: 0 10px;
+}
 
-	/*the design inside the 2 box thingy*/
-    .box {
-      background-color: rgba (255, 255, 255, 0.75);
-      border: 2px solid brown;
-      padding: 40px;
-      margin: 10px;
-      width: 500px;
-      border-radius: 10px;
-    }
+.box {
+  background-color: rgba(255, 255, 255, 0.75); /* fixed invalid rgba */
+  border: 2px solid brown;
+  padding: 30px;
+  margin: 10px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
 
 	/* colour of the h2 font in 2 box thingy*/
     .box h2 {

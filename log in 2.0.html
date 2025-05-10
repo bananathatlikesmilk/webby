@@ -29,7 +29,6 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      flex-wrap: wrap;
     }
 
     .nav-flex {
@@ -88,12 +87,21 @@
       background-color: #2980b9;
     }
 
-    @media screen and (max-width: 480px) {
-  nav .w3-bar-item {
-    font-size: 14px;
-    padding: 8px 10px;
+    @media screen and (max-width: 600px) {
+  nav.w3-bar {
+    padding: 0 10px;
+  }
+
+  .w3-bar-item {
+    font-size: 14px !important;
+    padding: 6px 8px !important;
+  }
+
+  .container {
+    margin-top: 40px; /* smaller top margin for login box */
   }
 }
+
 
   </style>
 </head>

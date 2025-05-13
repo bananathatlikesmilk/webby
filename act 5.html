@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-
+awesome/4.6.3/css/font-awesome.min.css">
+<!--<link rel="icon" href="New%20Folder/favicon.ico" type="image/x-icon">-->
+<title> Activity 5 </title>
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: teal;
+  padding: 80px 20px 20px 20px; /* Add padding-top to avoid hiding under header */
+  margin: 0;
+}
+
+    h1, h2 {
+        color: #4b2840;
+    }
+
+    h3 {
+        color: #4b2840;
+        margin-top:30px;
+    }
+    .main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 800px;
+  margin: auto;
+}
+
+   #column1, #column2 {
+  background-color: #fff0f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 280px;
+}
+    button {
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+    button:hover {
+        background-color: #e055a2;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        background-color: orange;
+        color: #4b2840;
+        margin-bottom: 8px;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    #total {
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+       header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      padding: 0px 0; /* Reduced padding for the header */
+      left: 0;
+    }
+
+    .w3-bar {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0 20px;
+flex-wrap: wrap;
+    }
+
+    .w3-bar-item {
+      transition: background 0.3s ease;
+    }
+
+    .w3-bar-item:hover {
+      background-color: #3498db;
+    }
+
+    .nav-flex {
+      display: flex;
+flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+ flex-wrap: wrap;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+.w3-button {
+  padding: 14px 16px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+ /* Mobile Responsive */
+    @media (max-width: 600px) {
+  nav.w3-bar {
+    padding: 0 10px;
+  }
+
+  .w3-bar-item {
+    font-size: 14px !important;
+    padding: 6px 8px !important;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  h3 {
+    margin-top: 100px;
+  }
+}
+
+</style>
+
+    <title>Product</title>
+</head>
+<body>
+
+    <header>
+  <nav class="w3-bar w3-black nav-flex">
+    <div class="nav-left">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Website%20try%201%20.html" class="w3-button w3-bar-item">Home</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/Project%20page.html" class="w3-button w3-bar-item">Projects</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/product%20page.html" class="w3-button w3-bar-item">Products</a>
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="nav-right">
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/cart.html" class="w3-button w3-bar-item">Developers</a>
+      <a href="file:///C:/Users/Kelvs/Desktop/A%20Minecraft%20Folder/profile.html" class="w3-button w3-bar-item">Profile</a>
+    </div>
+  </nav>
+</header>
+
+    <h3>
+        ACTIVITY 5 – Product total <br>
+        Name: Kelvin <br>
+        Course and Section: BSIS 2A
+    </h3>
+
+    <div class="main">
+        <div id="column1">
+            <h1>Products Total</h1>
+            <p>T-Shirt – 500</p>
+            <button onclick="addToCart('T-Shirt', 500)">Add to Cart</button>
+            <p>Short – 1000</p>
+            <button onclick="addToCart('Short', 1000)">Add to Cart</button>
+            <p>Pants – 1500</p>
+            <button onclick="addToCart('Pants', 1500)">Add to Cart</button>
+        </div>
+
+        <div id="column2">
+            <h2>Your Cart</h2>
+            <ul id="cart"></ul>
+            <p id="total"></p>
+        </div>
+    </div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            showCart();
+        }
+
+        function showCart() {
+            const cartList = document.getElementById('cart');
+            const totalElement = document.getElementById('total');
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ${item.price}`;
+                cartList.appendChild(li);
+                total += item.price;
+            });
+
+            totalElement.textContent = `Total: ${total}`;
+        }
+    </script>
+</body>
+</html>
